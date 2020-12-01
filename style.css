@@ -265,6 +265,10 @@ section.all-categories .categories .category a:not(:first-child) {
 }
 
 /* Section Page */
+#section aside img {
+  width: 100%;
+}
+
 #section article {
   border-top: 3px solid #000;
   padding-top: 30px;

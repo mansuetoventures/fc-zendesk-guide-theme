@@ -25,6 +25,11 @@
   <a href="mailto:care@fastcompany.com"></a>
 </button>
 
+<script>
+  var doc = new DOMParser().parseFromString('{{section.description}}', 'text/html');
+  document.querySelector('aside').innerHTML = doc.documentElement.textContent;
+</script>
+
 {{!-- <head>
 
 </head>
