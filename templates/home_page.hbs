@@ -1,110 +1,38 @@
+<main id="homepage">
+  <div class="container">
+    <section class="featured-categories">
+      <h2>FEATURED CATEGORIES</h2>
 
-<div id="headerDiv">
-  <section class="section hero">
-   <a href="https://fastcompany.zendesk.com/hc/en-us/articles/360041485271"> <p style="color:red; float: right;">COVID-19 FAQS</p></a>
-    <br/><br/><br/>
-    <div id="header-FC"><img src="{{asset 'FC2018_NewLogoSmall.png'}}">
-        <h3 class="fontSharp">HELP CENTER</h3>
-    </div>
-
-    <div class="hero-inner">
-      {{search submit=false instant=true class='search search-full'}}
-    </div>
-  </section>
-</div>
-
-<div>
-<div class="container">
-  <section id="zeeper" class="section knowledge-base">
-    <section class="categories blocks">
-      <br>
-      
-      
-      <br>
-      
-<h2 id="zTest1" class="block-header">SUBSCRIPTIONS</h2>
-
-      <ul class="blocks-list">
-        {{#each categories}}
-        
-        {{#is id 200158467}}
-        	<br>
-          <hr class="headerLine">	
-          <h2 class="yayZ block-header">EVENTS</h2>
-          <br>
-        {{/is}}
-        
-        {{#is id 200333039}}
-          <br>
-          <hr class="headerLine">
-          <h2 class="yayZ block-header">RECOGNITION PROGRAMS</h2>
-          <br>
-        {{/is}}
-        
-        {{#is id 115000833166}}
-          <br>
-      		<hr class="headerLine">
-          <h2 class="yayZ block-header">PRODUCTS</h2>
-          <br>
-        {{/is}}
-        
-        {{#is id 200163438}}
-          <br>
-          <hr class="headerLine">
-          <h2 class="yayZ block-header">EDITORIAL INQUIRIES</h2>
-          <br>
-        {{/is}}
-                
-          {{#if ../has_multiple_categories}}
-            <li class="blocks-item">
-                <a href='{{url}}' class="blocks-item-link">
-                  <h3 class="blocks-item-title">{{name}}</h3>
-                  <p class="blocks-item-description">{{excerpt description}}</p>
-                </a>      
-            </li>      
-          {{else}}
-            {{#each sections}}
-              <li class="blocks-item {{#if internal}}blocks-item-internal{{/if}}">
-                <a href='{{url}}' class="blocks-item-link">
-                  <h3 class="blocks-item-title">
-                    {{name}}
-                    {{#if internal}}
-                      <span class="icon-lock" title="{{t 'internal'}}"></span>
-                    {{/if}}
-                  </h3>
-                  <p class="blocks-item-description">{{excerpt description}}</p>
-                </a>
-              </li>
-            {{/each}}
-          {{/if}}
-        {{/each}}
-      </ul>      
-       
-      {{pagination}}
+      <div class="categories">
+        <div class="category">1</div>
+        <div class="category">2</div>
+        <div class="category">3</div>
+      </div>
     </section>
 
-    {{#if promoted_articles}}
-      <section class="articles">
-        <h3>{{t 'promoted_articles'}}</h3>
-        <ul class="article-list promoted-articles">
-          {{#each promoted_articles}}
-            <li class="promoted-articles-item">
-              <a href="{{url}}">
-                {{title}}
-              </a>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/if}}
-  </section>
-  
- <div>
-    <hr class="headerLine">
-  	<a href="mailto:care@fastcompany.com">	
-    	<h2 id="contactUs" class="block-header">CONTACT US</h2>  
-    </a>
+    <section class="all-categories">    
+      <div class="categories">
+        {{#each categories}}
+          {{#is id 200120278}}<div class="row"><div class="category"><h3>SUBSCRIPTIONS</h3>{{/is}}
+          {{#is id 200158467}}<div class="category"><h3>EVENTS</h3>{{/is}}
+          {{#is id 200333039}}<div class="category"><h3>RECOGNITION</h3>{{/is}}
+          {{#is id 115000833166}}<div class="row"><div class="category"><h3>SOMETHING</h3>{{/is}}
+          {{#is id 200163438}}<div class="category"><h3>EDITORIAL REQUESTS</h3>{{/is}}
+
+          <a href="{{url}}">{{name}}</a>
+
+          {{#is id 115000833066}}</div>{{/is}}
+          {{#is id 115000833086}}</div>{{/is}}
+          {{#is id 115000833146}}</div></div>{{/is}}
+          {{#is id 115000847103}}</div>{{/is}}
+          {{#is id 200043337}}</div></div>{{/is}}
+        {{/each}}
+      </div>
+    </section>
   </div>
-  
-</div>
-  
+</main>
+
+<button id="contact-us">
+  Contact Us
+  <a href="mailto:care@fastcompany.com"></a>
+</button>

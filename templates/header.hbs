@@ -1,19 +1,21 @@
-<!--
-
-<header class="header">
-  <div class="logo">
+<header>
+  <div id="logo">
     {{#link 'help_center'}}
-      <img src="{{logo_url}}" alt="{{t 'logo'}}">
+      <img src="//images.fastcompany.net/image/upload/v1538500532/fcweb/FC_Logo_2018_amgwhf.svg">
     {{/link}}
   </div>
-  <div class="nav-wrapper">
-    <span class="icon-menu"></span>
-    <nav class="user-nav" id="user-nav">
-      {{link 'community'}}
-      {{link 'new_request' class='submit-a-request'}}
-    </nav>
-    {{user_info}}
+
+  <div id="title">
+    Help Center
+  </div>
+
+  <div id="search">
+    <section class="search-box">
+      <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input id="query" name="query" placeholder="Search" type="search" />
+        <button><i class="icon-search-glass"></i></button>
+      </form>
+    </section>
   </div>
 </header>
-
- -->

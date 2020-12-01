@@ -1,4 +1,56 @@
-<div class="container-divider"></div>
+<main id="search-results">
+  <nav id="breadcrumbs">{{breadcrumbs}}</nav>
+
+  <div class="container sidebar">
+    <aside></aside>
+  
+    <article>
+      <h1>{{t 'search_results'}}</h1>
+      <h2>{{t 'results' query=query count=results_count}}</h2>
+      
+      <div class="results">
+        {{#if article_results}}
+          <section class="knowledge-base">
+            <h3>{{t 'knowledge_base'}}</h3>
+
+              <ul>
+                {{#each article_results}}
+                  <li>
+                    <a href="{{url}}">{{title}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+          </section>
+        {{/if}}
+
+        {{#if help_center.community_enabled}}
+          {{#if post_results}}
+            <section class="community">
+              <h3>{{t 'community'}}</h3>
+          
+              <ul>
+                {{#each post_results}}
+                <li>
+                  <a href="{{url}}">{{title}}</a>
+                </li>
+                {{/each}}
+              </ul>
+            </section>
+          {{/if}}
+        {{/if}}
+      </div>
+    
+      {{pagination}}
+    </article>
+  </div>
+</main>
+
+<button id="contact-us">
+  Contact Us
+  <a href="mailto:care@fastcompany.com"></a>
+</button>
+
+{{!-- <div class="container-divider"></div>
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
@@ -100,4 +152,4 @@
   </div>
 
   {{pagination}}
-</div>
+</div> --}}

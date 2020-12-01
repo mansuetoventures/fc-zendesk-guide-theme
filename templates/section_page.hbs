@@ -1,4 +1,31 @@
-<head>
+<main id="section">
+  <nav id="breadcrumbs">{{breadcrumbs}}</nav>
+
+  <div class="container sidebar">
+    <aside></aside>
+
+    <article>
+      <h1>{{section.name}}</h1>
+
+      {{#if section.articles}}
+        <ul>
+          {{#each section.articles}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+          </li>
+          {{/each}}
+        </ul>
+      {{/if}}  
+    </article>
+  </div>
+</main>
+
+<button id="contact-us">
+  Contact Us
+  <a href="mailto:care@fastcompany.com"></a>
+</button>
+
+{{!-- <head>
 
 </head>
 
@@ -55,4 +82,4 @@
     
     
   </div>
-</div>
+</div> --}}
