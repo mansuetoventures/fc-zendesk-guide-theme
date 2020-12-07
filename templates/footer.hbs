@@ -14,31 +14,61 @@
         <h4>POPULAR ARTICLES</h4>
       </div>
     </section>
+  </div>
 
-    <section class="links">
+  <section class="links">
+    <div>
       <span>
-        <a href="https://www.fastcompany.com/">Home</a>
+        <a href="https://www.inc.com/">Home</a>
       </span>
-
+      
       <span>
-        <a href="https://w1.buysub.com/pubs/FC/FST/CustomerCare.jsp?cds_page_id=64012&cds_mag_code=FST&id=1394731410854&lsid=40721223308037080&vid=1">Customer Care</a>
+        <a href="http://www.inc.com/customercare">Subscriber Care</a>
       </span>
-
-      <span>
-        Print Subscriber Care: (800) 542-6029
-      </span>
-
-      <span>
-        <a href="https://www.fastcompany.com/staff-masthead">Masthead</a>
-      </span>
-
+      
       <span>
         <a href="http://www.mansueto.com/privacy.html">Privacy Policy</a>
       </span>
+    </div>
 
-      <span>
-        Copyright 2020 Mansueto Ventures
-      </span>
-    </section>
-  </div>
+    <div class="copyright">
+      Copyright 2020 Mansueto Ventures
+    </div>
+  </section>
 </footer>
+
+<script>
+  var button = document.querySelector('button#contact-us');
+  
+  let last_known_scroll_position = 0;
+  let ticking = false;
+
+  function doSomething(scroll_pos) {
+    var doc = document.body.offsetHeight;
+    var loc = scroll_pos + window.innerHeight;
+
+    if (loc > (doc - 100)) {
+      button.style.opacity = 0; 
+      
+      setTimeout(function () {
+        button.style.right = '-200px';
+      }, 250); 
+    } else { 
+      button.style.removeProperty('right');
+      button.style.opacity = 1;
+    }
+  }
+
+  document.addEventListener('scroll', function (e) {
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        doSomething(last_known_scroll_position);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+</script>

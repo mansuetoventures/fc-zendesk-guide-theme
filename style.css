@@ -2,35 +2,36 @@
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-font-smoothing: grayscale; }
 
 /* Fonts */
-@font-face { font-family: 'CentraNo1'; font-style: normal; font-weight: 700; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/CentraNo1-Bold-Italic-Web/CentraNo1-Bold.woff') format('woff'), url('//assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/CentraNo1-Bold-Italic-Web/CentraNo1-Bold.eot') format('embedded-opentype'); }
-@font-face { font-family: 'CentraNo1Book'; font-style: normal; font-weight: 400; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/CentraNo1-Book-Italic-Web/CentraNo1-Book.woff') format('woff'), url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/CentraNo1-Book-Italic-Web/CentraNo1-Book.eot') format('embedded-opentype'); }
-@font-face { font-family: 'Beckett'; font-style: normal; font-weight: 300; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/Beckett/A2Beckett-BookWEB.woff') format('woff'); }
+@font-face { font-family: 'Grot'; font-weight: 700; font-display: swap; src: url('https://one.mansueto.com/assets/fonts/grotcondensed/Grot12Condensed-BoldWEB.woff2') format('woff2'), url('https://one.mansueto.com/assets/fonts/grotcondensed/Grot12Condensed-BoldWEB.woff') format('woff'); }
+@font-face { font-family: 'Grot'; font-weight: 900; font-display: swap; src: url('https://one.mansueto.com/assets/fonts/grotcondensed/Grot12Condensed-BlackWEB.woff2') format('woff2'), url('https://one.mansueto.com/assets/fonts/grotcondensed/Grot12Condensed-BlackWEB.woff') format('woff'); }
+@font-face { font-family: 'IBM'; font-style: normal; font-weight: 700; font-display: swap; src: url('https://one.mansueto.com/assets/fonts/ibm-plex-mono/ibm-plex-mono-v5-latin-700.eot'); /* IE9 Compat Modes */ src: local('IBM Plex Mono Bold'), local('IBMPlexMono-Bold'), url('https://one.mansueto.com/assets/fonts/ibm-plex-mono/ibm-plex-mono-v5-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://one.mansueto.com/assets/fonts/ibm-plex-mono/ibm-plex-mono-v5-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('https://one.mansueto.com/assets/fonts/ibm-plex-mono/ibm-plex-mono-v5-latin-700.woff') format('woff'), /* Modern Browsers */ url('https://one.mansueto.com/assets/fonts/ibm-plex-mono/ibm-plex-mono-v5-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://one.mansueto.com/assets/fonts/ibm-plex-mono/ibm-plex-mono-v5-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */ }
+@font-face { font-family: 'Le Monde Livre'; src:url("https://use.typekit.net/af/1783fb/00000000000000003b9b2841/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/1783fb/00000000000000003b9b2841/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/1783fb/00000000000000003b9b2841/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype"); font-display:auto;font-style:normal;font-weight:400; }
+@font-face { font-family: 'Le Monde Livre'; src:url("https://use.typekit.net/af/ab799f/00000000000000003b9b2846/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/ab799f/00000000000000003b9b2846/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/ab799f/00000000000000003b9b2846/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype"); font-display:auto;font-style:italic;font-weight:400; }
+@font-face { font-family: 'Le Monde Livre'; src:url("https://use.typekit.net/af/30edff/00000000000000003b9b282b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/30edff/00000000000000003b9b282b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/30edff/00000000000000003b9b282b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype"); font-display:auto;font-style:italic;font-weight:700; }
+@font-face { font-family: 'Le Monde Livre'; src:url("https://use.typekit.net/af/a32de1/00000000000000003b9b2809/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/a32de1/00000000000000003b9b2809/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/a32de1/00000000000000003b9b2809/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype"); font-display:auto;font-style:normal;font-weight:700; }
+@font-face { font-family: 'Tablet Gothic'; src:url("https://use.typekit.net/af/746f67/00000000000000003b9b2f3d/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/746f67/00000000000000003b9b2f3d/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/746f67/00000000000000003b9b2f3d/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype"); font-display:auto;font-style:normal;font-weight:400; }
 @font-face { font-family: 'FCIcon2015'; font-style: normal; font-weight: normal; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/fc-app-2017/fc-icons/fc-icon11.eot?pa1lh4'); src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/fc-app-2017/fc-icons/fc-icon11.eot?pa1lh4#iefix') format('embedded-opentype'), url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/fc-app-2017/fc-icons/fc-icon11.ttf?pa1lh4') format('truetype'), url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/fc-app-2017/fc-icons/fc-icon11.woff?pa1lh4') format('woff'), url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010/fc-app-2017/fc-icons/fc-icon11.svg?pa1lh4#fc-icon11') format('svg'); }
-@font-face { font-family: 'GrifoM'; font-style: normal; font-weight: 400; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/grifito/grifoMRegular.otf') }
-@font-face { font-family: 'MeretPro'; font-style: normal; font-weight: 300; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010//meret/Meret_SubFC-Book.woff') format('woff'); }
-@font-face { font-family: 'MeretPro'; font-style: italic; font-weight: 300; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010//meret/Meret_SubFC-Book_Italic.woff') format('woff'); }
-@font-face { font-family: 'MeretPro'; font-style: normal; font-weight: 700; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010//meret/Meret_SubFC-Bold.woff') format('woff'); }
-@font-face { font-family: 'MeretPro'; font-style: italic; font-weight: 700; src: url('https://assets.fastcompany.com/multisite_files/fastcompany/static/sites/fonts/201010//meret/Meret_SubFC-Bold_Italic.woff') format('woff'); }
 
 /* Page Structure */
-.container { max-width: 1200px; margin: 160px auto 200px; }
-#homepage .container { max-width: 912px; margin: 92px auto 200px;}
-#article .container { max-width: 1200px; margin: 124px auto 200px;}
-#category .container { max-width: 1200px; margin: 124px auto 200px;}
-#section .container { max-width: 1200px; margin: 124px auto 200px;}
-#search-results .container { max-width: 1200px; margin: 124px auto 200px;}
-#error .container { max-width: 1200px; margin: 124px auto 200px;}
-footer .container { max-width: 1200px; margin: 0 auto; }
+.container { max-width: 1300px; margin: 0 auto; border-bottom: 1px solid #E5E5E5;}
+#homepage .container { max-width: 960px; margin: 92px auto 131px;}
+header .container, footer .container { border-bottom: none; }
 
 /* Grid Structure for Pages */
 .container.sidebar {
   display: grid;
-  grid-template-columns: 250px auto;
-  column-gap: 50px;
+  grid-template-columns: 268px auto;
 }
 
 #article .container.sidebar {
-  grid-template-columns: 250px 650px;
+  grid-template-columns: 268px 684px;
+}
+
+/* Line on Pages */
+.container.sidebar article {
+  padding-left: 40px;
+  padding-bottom: 230px;
+  border-left: 1px solid #E5E5E5;
 }
 
 /* Contact Us Button */
@@ -45,7 +46,8 @@ button#contact-us {
   text-transform: uppercase;
   position: fixed;
   bottom: 25px;
-  right: calc((100vw - 1200px) / 2);
+  right: calc((100vw - 1300px) / 2);
+  transition: opacity 250ms, height 250ms;
 }
 
 button#contact-us a {
@@ -60,31 +62,41 @@ button#contact-us a {
 /* Top Nav */
 header {
   width: 100vw;
-  height: 80px;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 calc((100vw - 1200px) / 2);
+  background: #FFFFFF;
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
-header #logo img {
-  height: 35px;
+header .container .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 162px;
 }
 
-header #title {
-  font: 300 50px/48px 'Beckett';
-  letter-spacing: 6.65px;
-  text-transform: uppercase;
-  color: #FFF;
+header #logo a {
+  text-decoration: none;
+  color: #000;
+}
+
+header #logo img {
+  height: 29px;
+}
+
+header #logo span {
+  font: 700 32px/32px 'Grot';
+  margin-left: 17px;
 }
 
 header #search {
+  display: flex;
+}
+
+header #search section.search-box {
   width: 258px;
-  border-bottom: 2px solid #CCC;
+  border-bottom: 1px solid #B2B2B2;
   position: relative;
 }
 
@@ -96,15 +108,13 @@ header #search #query {
   width: calc(100% - 13px);
   background: transparent;
   border: none;
-  font: 700 12px/30px 'CentraNo1';
-  color: #CCC;
-  text-transform: uppercase;
-  letter-spacing: 0.96px;
+  font: 700 24px/35px 'Grot';
+  color: #B2B2B2;
 }
 
 header #search button {
   position: absolute;
-  top: 5px;
+  top: 10px;
   right: 0;
   border: none;
   background: transparent;
@@ -112,18 +122,70 @@ header #search button {
 
 header #search button::before {
   content: "\e910";
-  font: normal 18px/18px FCIcon2015;
-  color: #CCC;
+  font: normal 14px/14px FCIcon2015;
+  color: #000000;
 }
 
-header #search #query::placeholder { color: #CCC; opacity: 1; }
-header #search #query:-ms-input-placeholder { color: #CCC; }
-header #search #query::-ms-input-placeholder { color: #CCC; }
+header #search #query::placeholder { color: #B2B2B2; opacity: 1; }
+header #search #query:-ms-input-placeholder { color: #B2B2B2; }
+header #search #query::-ms-input-placeholder { color: #B2B2B2; }
+
+/* Homepage Top Nav */
+header#homepage-header {
+  max-width: 1261px;
+  margin: 0 auto;
+  position: relative;
+}
+
+header#homepage-header #logo a {
+  text-decoration: none;
+  color: #000;
+}
+
+header#homepage-header #logo img {
+  height: 141px;
+}
+
+header#homepage-header #logo span {
+  font: 900 100px/100px 'Grot';
+  letter-spacing: -0.89px;
+  margin-left: 27px;
+  position: relative;
+  bottom: 2px;
+}
+
+header#homepage-header #search {
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 140px auto 0;
+}
+
+header#homepage-header #search span {
+  font: 900 56px/60px 'Grot';
+  letter-spacing: -0.5px;
+  color: #FF3B00;
+}
+
+header#homepage-header #search section.search-box {
+  width: 405px;
+  position: relative;
+}
 
 /* Breadcrumbs */
 nav#breadcrumbs {
-  max-width: 1200px;
-  margin: 13px auto 0;
+  max-width: 1300px;
+  position: sticky;
+  top: 162px;
+  background: #FFF;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+nav#breadcrumbs div {
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 22px;
 }
 
 nav#breadcrumbs ol {
@@ -134,81 +196,91 @@ nav#breadcrumbs ol {
 }
 
 nav#breadcrumbs ol li, nav#breadcrumbs ol li a {
-  font: 700 9.5px/9.5px 'CentraNo1';
-  letter-spacing: 0.95px;
-  color: #5F5F5F;
+  font: 700 10px/10px 'IBM';
+  letter-spacing: 2px;
+  color: #999999;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 nav#breadcrumbs ol li:not(:last-child)::after {
   content: '>';
-  padding: 0 5px 0 2px;
+  padding: 0 15px;
+  position: relative;
+  left: -4px;
 }
 
 /* Homepage */
 /* featured categories */
 section.featured-categories {
-  margin-bottom: 102px;
+  margin-bottom: 80px;
+  border-top: 5px solid #000;
 }
 
 section.featured-categories h2 {
-  font: 700 12px/15px 'CentraNo1';
-  letter-spacing: 1.2px;
-  color: #5F5F5F;
-  margin: 0;
+  font: 700 10px/15px 'IBM';
+  letter-spacing: 2px;
+  color: #000;
+  margin: 10px 0 0 0;
 }
 
 section.featured-categories .categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
 }
 
 section.featured-categories .categories .category {
-  border-top: 6px solid #CCC;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 19px 0 0 0;
   cursor: pointer;
 }
 
-section.featured-categories .categories .category:hover {
-  border-top: 6px solid #777;
-}
-
 /* all categories */
-section.all-categories {
-  border-top: 3px solid #000;
-  padding-top: 10px;
-}
-
 section.all-categories .categories .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
-
-section.all-categories .categories .row:not(:first-child) {
-  border-top: 1px solid #CCC;
+  border-top: 1px solid #E5E5E5;
 }
 
 section.all-categories .categories .category {
-  padding: 15px 0 52px;
+  padding: 64px 50px 52px 0;
 }
 
-section.all-categories .categories .category h3 {
-  font: 300 50px/50px 'Beckett';
-  letter-spacing: 5.75px;
+section.all-categories .categories .category h3 a {
+  font: 700 28px/28px 'Grot';
   color: #000;
   margin: 0;
+  text-decoration: none;
 }
 
-section.all-categories .categories .category a {
-  display: block;
-  font: 400 14px/16px 'CentraNo1Book';
-  letter-spacing: 1.4px;
-  color: #5F5F5F;
-  text-transform: uppercase;
+section.all-categories .categories .category ul {
+  margin: 0 0 0 36px;
+  padding: 0;
+  list-style: none;
+}
+
+section.all-categories .categories .category ul li {
+  margin-top: 19px;
+}
+
+section.all-categories .categories .category ul li::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #000;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+  margin-left: -18px;
+}
+
+section.all-categories .categories .category ul li a {
+  font: 400 18px/18px 'Tablet Gothic';
+  color: #000;
   text-decoration: none;
 }
 
@@ -218,27 +290,26 @@ section.all-categories .categories .category a:not(:first-child) {
 
 /* Category Page */
 #category article {
-  border-top: 3px solid #000;
-  padding-top: 30px;
+  padding-top: 52px;
 }
 
 #category article h1 {
   margin: 0;
-  font: 300 60px/60px 'Beckett';
-  letter-spacing: 6.9px;
-  color: #000;
-  text-transform: uppercase;
+  font: 900 56px/60px 'Grot';
+  letter-spacing: -0.5px;
+  color: #FF3B00;
+}
+
+#category article .section:first-of-type {
+  margin-top: 39px;
 }
 
 #category article .section {
-  border-top: 1.25px solid #CCC;
-  padding-top: 26px;
-  margin-top: 28px;
+  margin-top: 103px;
 }
 
 #category article .section h2 {
-  font: 700 30px/35px 'GrifoM';
-  letter-spacing: 0.75px;
+  font: 700 28px/35px 'Grot';
   color: #000;
   margin: 0;
 }
@@ -250,17 +321,29 @@ section.all-categories .categories .category a:not(:first-child) {
 
 #category article .section .articles ul {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 17px;
   list-style: none;
 }
 
 #category article .section .articles ul li {
-  margin-top: 15px;
+  margin-top: 19px;
+}
+
+#category article .section .articles ul li::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #000;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
 }
 
 #category article .section .articles ul li a {
-  font: 400 16px/16px 'CentraNo1Book';
-  color: #5F5F5F;
+  font: 400 18px/18px 'Tablet Gothic';
+  color: #000;
   text-decoration: none;
 }
 
@@ -270,55 +353,70 @@ section.all-categories .categories .category a:not(:first-child) {
 }
 
 #section article {
-  border-top: 3px solid #000;
-  padding-top: 30px;
+  padding-top: 52px;
 }
 
 #section article h1 {
   margin: 0;
-  font: 300 60px/60px 'Beckett';
-  letter-spacing: 6.9px;
-  color: #000;
-  text-transform: uppercase;
+  font: 900 56px/60px 'Grot';
+  letter-spacing: -0.5px;
+  color: #FF3B00;
 }
 
 #section article ul {
-  margin: 0;
+  margin: 0 0 0 36px;
   padding: 0;
   list-style: none;
 }
 
 #section article ul li {
-  margin-top: 15px;
+  margin-top: 19px;
+}
+
+#section article ul li::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #000;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+  margin-left: -18px;
 }
 
 #section article ul li a {
-  font: 400 16px/16px 'CentraNo1Book';
-  color: #5F5F5F;
+  font: 400 18px/18px 'Tablet Gothic';
+  color: #000;
   text-decoration: none;
 }
+
+
 
 /* Articles */
 /* sidebar */
 #article aside {
-  border-top: 3px solid #000;
-  position: relative;
-  top: 10px;
+  padding-top: 80px;
+  padding-bottom: 230px;
 }
 
 #article aside .related-articles {
   border-top: 1px solid #CCCCCC;
   margin-top: 25px;
+  padding-top: 25px;
+  padding-right: 22px;
 }
 
-#article aside .related-articles, #article aside .section-articles {
-  padding-top: 25px;
+#article aside .section-articles {
+  padding-top: 0;
+  padding-right: 22px;
 }
 
 #article aside h3 {
-  font: 700 12px/15px 'CentraNo1';
-  letter-spacing: 1.2px;
-  color: #5f5f5f;
+  font: 700 10px/10px 'IBM';
+  letter-spacing: 2px;
+  color: #000000;
   margin: 0;
   text-transform: uppercase;
 }
@@ -334,30 +432,40 @@ section.all-categories .categories .category a:not(:first-child) {
 }
 
 #article aside ul li a {
-  font: 400 13px/13px 'CentraNo1Book';
-  color: #5F5F5F;
+  font: 400 13px/13px 'Le Monde Livre';
+  color: #474747;
   text-decoration: none;
 }
 
 #article aside ul li a.current {
-  color: #CCCCCC;
+  color: #999999;
 }
 
 /* content */
+#article article {
+  padding-top: 68px;
+}
+
 #article article h1 {
-  font: 700 30px/35px 'GrifoM';
-  letter-spacing: 0.75px;
+  font: 700 28px/35px 'Grot';
   color: #000;
   margin: 0;
 }
 
 #article article .article-content {
-  font-family: 'MeretPro';
+  font: 400 16px/30px 'Le Monde Livre';
+  color: #474747;
+}
+
+#article article .article-content p:not(:first-child) {
+  margin-top: 2em;
 }
 
 #article article .article-content a {
-  color: #EF5B24;
+  color: #474747;
   text-decoration: none;
+  border-bottom: 1px solid #474747;
+  padding-bottom: 4px;
 }
 
 /* Search Results */
@@ -368,7 +476,7 @@ section.all-categories .categories .category a:not(:first-child) {
 
 #search-results article h1 {
   margin: 0;
-  font: 300 60px/60px 'Beckett';
+  font: 300 60px/60px 'Grot';
   letter-spacing: 6.9px;
   color: #000;
   text-transform: uppercase;
@@ -480,20 +588,31 @@ nav.pagination ul li span {
 
 /* Footer */
 footer {
-  margin: 0 0 40px 0;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+footer .container {
+  padding-top: 50px;
+}
+
+body.homepage footer .container {
+  max-width: 960px;
+  padding-top: 0;
 }
 
 footer .columns {
-  max-width: 912px;
-  margin: 0 auto 60px;
+  max-width: 960px;
+  /* padding: 0 90px; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 50px;
+  grid-template-columns: repeat(3, minmax(min-content, 260px));
+  column-gap: 60px;
 }
 
 footer .columns .column h4 {
-  font: 700 12px/15px 'CentraNo1';
-  letter-spacing: 1.2px;
+  font: 700 10px/15px 'IBM';
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #000;
   margin: 0;
 }
@@ -505,13 +624,12 @@ footer .columns .column ul {
 }
 
 footer .columns .column li {
-  margin-top: 12px;
+  margin-top: 15px;
 }
 
 footer .columns .column li a {
-  font: 400 13px/13px 'CentraNo1Book';
-  letter-spacing: 0.26px;
-  color: #5F5F5F;
+  font: 400 14px/14px 'Le Monde Livre';
+  color: #474747;
   text-decoration: none;
 }
 
@@ -520,28 +638,46 @@ footer .columns .column.recent h3, footer .columns .column.popular h3 {
 }
 
 footer .links {
-  border-top: 3px solid #000;
-  padding-top: 15px;
+  width: 100vw;
+  height: 80px;
+  background: #000;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 44px;
+  padding: 0 calc((100vw - 1300px) / 2);
+}
+
+footer .links .copyright {
+  font: 700 10px/15px 'IBM';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999999;
 }
 
 footer .links span, footer .links span a {
-  font: 400 12px/15px 'CentraNo1Book';
-  letter-spacing: 1.2px;
-  color: #5F5F5F;
+  font: 700 10px/15px 'IBM';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
-footer .links span:not(:first-child)::before {
+footer .links span:not(:first-child) {
   content: '';
-  border-left: 1px solid #5F5F5F;
-  padding-left: 14px;
-  margin-left: 14px;
+  margin-left: 24px;
 }
 
-@media (max-width: 1200px) {
-  header {
-    padding: 0 10px;
+@media (max-width: 1300px) {
+  nav#breadcrumbs, header .container, footer .links, header#homepage-header {
+    padding: 0 28px;
+  }
+
+  #article .container {
+    max-width: calc(100vw - 56px);
+  }
+
+  button#contact-us {
+    right: 28px;
   }
 }

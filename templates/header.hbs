@@ -1,21 +1,28 @@
 <header>
-  <div id="logo">
-    {{#link 'help_center'}}
-      <img src="//images.fastcompany.net/image/upload/v1538500532/fcweb/FC_Logo_2018_amgwhf.svg">
-    {{/link}}
-  </div>
+  <div class="container">
+    <section class="content">
+      <div id="logo">
+        {{#link 'help_center'}}
+          <img src="//inc2.inc.com/img/Inc-logo-black.svg">
+          <span>Help Center</span>
+        {{/link}}
+      </div>
 
-  <div id="title">
-    Help Center
-  </div>
-
-  <div id="search">
-    <section class="search-box">
-      <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
-        <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-        <input id="query" name="query" placeholder="Search" type="search" />
-        <button><i class="icon-search-glass"></i></button>
-      </form>
+      <div id="search">
+        <section class="search-box">
+          <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+            <input id="query" name="query" placeholder="Search" type="search" />
+            <button><i class="icon-search-glass"></i></button>
+          </form>
+        </section>
+      </div>
     </section>
   </div>
 </header>
+
+<script>
+  if (/^\/hc\/\D{2,5}$/gi.test(window.location.pathname)) {
+    document.querySelector('header').remove();
+  }
+</script>
