@@ -212,25 +212,25 @@ nav#breadcrumbs ol li:not(:last-child)::after {
 
 /* Homepage */
 /* featured categories */
-section.featured-categories {
+#homepage section.featured-categories {
   margin-bottom: 80px;
   border-top: 5px solid #000;
 }
 
-section.featured-categories h2 {
+#homepage section.featured-categories h2 {
   font: 700 10px/15px 'IBM';
   letter-spacing: 2px;
   color: #000;
   margin: 10px 0 0 0;
 }
 
-section.featured-categories .categories {
+#homepage section.featured-categories .categories .treadmill {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 40px;
 }
 
-section.featured-categories .categories .category {
+#homepage section.featured-categories .categories .category {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -238,34 +238,34 @@ section.featured-categories .categories .category {
 }
 
 /* all categories */
-section.all-categories .categories .row {
+#homepage section.all-categories .categories .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #E5E5E5;
 }
 
-section.all-categories .categories .category {
+#homepage section.all-categories .categories .category {
   padding: 64px 50px 52px 0;
 }
 
-section.all-categories .categories .category h3 a {
+#homepage section.all-categories .categories .category h3, #homepage section.all-categories .categories .category h3 a {
   font: 700 28px/28px 'Grot';
   color: #000;
   margin: 0;
   text-decoration: none;
 }
 
-section.all-categories .categories .category ul {
+#homepage section.all-categories .categories .category ul {
   margin: 0 0 0 36px;
   padding: 0;
   list-style: none;
 }
 
-section.all-categories .categories .category ul li {
+#homepage section.all-categories .categories .category ul li {
   margin-top: 19px;
 }
 
-section.all-categories .categories .category ul li::before {
+#homepage section.all-categories .categories .category ul li::before {
   content: '';
   display: inline-block;
   width: 9px;
@@ -278,13 +278,13 @@ section.all-categories .categories .category ul li::before {
   margin-left: -18px;
 }
 
-section.all-categories .categories .category ul li a {
+#homepage section.all-categories .categories .category ul li a {
   font: 400 18px/18px 'Tablet Gothic';
   color: #000;
   text-decoration: none;
 }
 
-section.all-categories .categories .category a:not(:first-child) {
+#homepage section.all-categories .categories .category a:not(:first-child) {
   margin-top: 12px;
 }
 
@@ -321,7 +321,7 @@ section.all-categories .categories .category a:not(:first-child) {
 
 #category article .section .articles ul {
   margin: 0;
-  padding: 0 0 0 17px;
+  padding: 0 0 0 36px;
   list-style: none;
 }
 
@@ -339,6 +339,7 @@ section.all-categories .categories .category a:not(:first-child) {
   position: relative;
   bottom: 2px;
   margin-right: 5px;
+  margin-left: -18px;
 }
 
 #category article .section .articles ul li a {
@@ -392,8 +393,6 @@ section.all-categories .categories .category a:not(:first-child) {
   text-decoration: none;
 }
 
-
-
 /* Articles */
 /* sidebar */
 #article aside {
@@ -414,7 +413,7 @@ section.all-categories .categories .category a:not(:first-child) {
 }
 
 #article aside h3 {
-  font: 700 10px/10px 'IBM';
+  font: 700 10px/15px 'IBM';
   letter-spacing: 2px;
   color: #000000;
   margin: 0;
@@ -470,31 +469,28 @@ section.all-categories .categories .category a:not(:first-child) {
 
 /* Search Results */
 #search-results article {
-  border-top: 3px solid #000;
-  padding-top: 30px;
+  padding-top: 52px;
 }
 
 #search-results article h1 {
   margin: 0;
-  font: 300 60px/60px 'Grot';
-  letter-spacing: 6.9px;
-  color: #000;
-  text-transform: uppercase;
+  font: 900 50px/50px 'Grot';
+  letter-spacing: -0.5px;
+  color: #FF3B00;
 }
 
 #search-results article h2 {
-  font: 700 12px/15px 'CentraNo1';
-  letter-spacing: 1.2px;
-  color: #5f5f5f;
-  margin: 0;
+  font: 700 12px/12px 'IBM';
+  letter-spacing: 2px;
+  color: #999999;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 #search-results article .results h3 {
-  font: 700 30px/35px 'GrifoM';
-  letter-spacing: 0.75px;
+  font: 700 28px/19px 'Grot';
   color: #000;
-  margin: 0;
+  margin: 0 0 26px 0;
 }
 
 #search-results article .results section {
@@ -504,52 +500,68 @@ section.all-categories .categories .category a:not(:first-child) {
 }
 
 #search-results article .results ul {
-  margin: 0;
+  margin: 0 0 0 36px;
   padding: 0;
   list-style: none;
 }
 
 #search-results article .results ul li {
-  margin-top: 18px;
+  margin-top: 19px;
+}
+
+#search-results article .results ul li::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #000;
+  position: relative;
+  bottom: 2px;
+  margin-right: 5px;
+  margin-left: -18px;
 }
 
 #search-results article .results ul li a {
-  font: 400 13px/13px 'CentraNo1Book';
-  color: #5F5F5F;
+  font: 400 18px/24px 'Tablet Gothic';
+  color: #000000;
   text-decoration: none;
 }
 
 /* Error Page */
+body.error header .container {
+  border-bottom: 1px solid #E5E5E5;
+}
+
 #error article {
-  border-top: 3px solid #000;
-  padding-top: 30px;
+  padding-top: 52px;
 }
 
 #error article h1 {
   margin: 0;
-  font: 300 60px/60px 'Beckett';
+  font: 300 50px/50px 'Grot';
   letter-spacing: 6.9px;
   color: #000;
   text-transform: uppercase;
 }
 
 #error article h2 {
-  font: 700 12px/15px 'CentraNo1';
+  font: 700 12px/12px 'IBM';
   letter-spacing: 1.2px;
   color: #5f5f5f;
-  margin: 0;
+  margin: 10px 0 0 0;
   text-transform: uppercase;
 }
 
 #error article p {
-  font: 700 30px/35px 'GrifoM';
+  font: 700 30px/35px 'Le Monde Livre';
   letter-spacing: 0.75px;
   color: #000;
   margin: 30px 0;
 }
 
 #error article a {
-  font: 700 12px/15px 'CentraNo1';
+  font: 700 12px/15px 'IBM';
   letter-spacing: 1.2px;
   color: #EF5B24;
   text-decoration: none;
@@ -570,7 +582,7 @@ nav.pagination ul {
 }
 
 nav.pagination ul li {
-  font: 300 40px/40px 'Beckett';
+  font: 300 40px/40px 'Grot';
 }
 
 nav.pagination ul li:not(:first-child) {
@@ -668,9 +680,11 @@ footer .links span:not(:first-child) {
   margin-left: 24px;
 }
 
+/* SMALL DESKTOP */
 @media (max-width: 1300px) {
-  nav#breadcrumbs, header .container, footer .links, header#homepage-header {
-    padding: 0 28px;
+  nav#breadcrumbs, header .container, footer .links, footer .container, header#homepage-header {
+    padding-left: 28px;
+    padding-right: 28px;
   }
 
   #article .container {
@@ -679,5 +693,274 @@ footer .links span:not(:first-child) {
 
   button#contact-us {
     right: 28px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  #homepage .container { max-width: 614px; margin: 0 auto;}
+
+  .container.sidebar, #article .container.sidebar {
+    display: grid;
+    grid-template-columns: 176px auto;
+    width: calc(100% - (28px * 2));
+  }
+
+  .container.sidebar article {
+    padding-left: 28px;
+  }
+
+  nav#breadcrumbs {
+    top: 88px;
+  }
+
+  nav#breadcrumbs ol li:not(:last-child)::after {
+    padding: 0 4px;
+  }
+
+  header .container {
+    max-width: calc(100% - (28px * 2));
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  header #logo img {
+    height: 28px;
+  }
+
+  header #logo span {
+    font: 700 28px/28px 'Grot';
+    margin-left: 11px;
+  }
+
+  header .container .content {
+    height: 88px;
+  }
+
+  header#homepage-header {
+    max-width: 696px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  header#homepage-header #logo img {
+    height: 97px;
+  }
+
+  header#homepage-header #logo span {
+    font: 900 70px/70px 'Grot';
+    letter-spacing: -0.63px;
+    margin-left: 23px;
+    position: relative;
+    bottom: 2px;
+  }
+
+  header#homepage-header #search {
+    max-width: 614px;
+    margin: 64px auto 0;
+    padding-right: 162px;
+    display: block;
+  }
+
+  header#homepage-header #search span {
+    font: 900 50px/55px 'Grot';
+    letter-spacing: -0.45px;
+    color: #FF3B00;
+    display: block;
+    margin-bottom: 23px;
+  }
+
+  header#homepage-header #search section.search-box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 122px;
+  }
+
+  #homepage section.featured-categories .categories .category:nth-of-type(1) { justify-content: flex-start; }
+  #homepage section.featured-categories .categories .category:nth-of-type(2) { justify-content: center; }
+  #homepage section.featured-categories .categories .category:nth-of-type(3) { justify-content: flex-end; }
+
+  #homepage section.all-categories .categories .row {
+    column-gap: 30px;
+  }
+  
+  #homepage section.all-categories .categories .category {
+    padding: 30px 0 55px;
+  }
+
+  #homepage section.all-categories .categories .category h3, section.all-categories .categories .category h3 a {
+    font: 700 24px/23px 'Grot';
+    color: #000;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  #homepage section.all-categories .categories .category ul {
+    margin: 0 0 0 36px;
+    padding: 0;
+    list-style: none;
+  }
+
+  #homepage section.all-categories .categories .category ul li {
+    margin-top: 19px;
+  }
+
+  #homepage section.all-categories .categories .category ul li::before {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #000;
+    position: relative;
+    bottom: 2px;
+    margin-right: 5px;
+    margin-left: -18px;
+  }
+
+  #homepage section.all-categories .categories .category ul li a {
+    font: 400 18px/18px 'Tablet Gothic';
+    color: #000;
+    text-decoration: none;
+  }
+
+  body.homepage footer .container {
+    max-width: 614px;
+    padding: 0;
+    margin-top: 121px;
+  }
+
+  #article aside {
+    padding-top: 60px;
+  }
+
+  #article aside .section-articles h3 {
+    max-width: 100px;
+  }
+
+  #article article {
+    padding-top: 52px;
+  }
+
+  footer .container {
+    max-width: calc(100% - (28px * 2));
+    padding-top: 23px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  footer .links {
+    padding: 0 18px;
+  }
+
+  footer .links span:not(:first-child) {
+    content: '';
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  header#homepage-header {
+    max-width: calc(100vw - 50px);
+  }
+
+  header#homepage-header #logo img {
+    height: 68px;
+  }
+
+  header#homepage-header #logo span {
+    font: 900 55px/55px 'Grot';
+    letter-spacing: -0.49px;
+    margin-left: 0;
+    position: initial;
+    bottom: 0;
+    display: block;
+  }
+
+  header#homepage-header #search {
+    max-width: 100%;
+    margin: 32px 0 0 0;
+    padding-right: 0;
+    display: block;
+  }
+
+  header#homepage-header #search span {
+    font: 900 50px/47px 'Grot';
+    letter-spacing: -0.45px;
+    margin-bottom: 28px;
+  }
+
+  header#homepage-header #search section.search-box {
+    margin-bottom: 95px;
+  }
+
+  #homepage .container {
+    max-width: calc(100vw - 50px);
+  }
+
+  #homepage section.featured-categories .categories {
+    width: 100vw;
+    position: relative;
+    right: 25px;
+    overflow: hidden;
+  }
+
+  #homepage section.featured-categories .categories .treadmill {
+    position: relative;
+    left: 25px;
+    transition: left 500ms;
+  }
+
+  #homepage section.featured-categories .categories .category {
+    display: block;
+    width: calc(100vw - 80px);
+  }
+
+  #homepage section.all-categories .categories .row {
+    grid-template-columns: 1fr;
+    border-top: 0;
+  }
+
+  #homepage section.all-categories .categories .category {
+    border-top: 1px solid #E5E5E5;
+    padding: 42px 0 46px;
+  }
+
+  #homepage section.all-categories .categories .category h3, #homepage section.all-categories .categories .category h3 a {
+    font: 700 26px/26px 'Grot';
+    color: #000;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  body.homepage footer .container {
+    max-width: calc(100vw - 50px);
+    margin-top: 164px;
+  }
+
+  footer .columns {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  footer .columns .column {
+    margin-bottom: 42px;
+  }
+
+  footer .links {
+    margin-top: 12px;
+    display: block;
+    height: auto;
+    padding: 38px 28px;
+  }
+
+  footer .links span {
+    display: block;
+  }
+
+  footer .links span:not(:first-child), footer .links .copyright {
+    margin-left: 0;
+    margin-top: 11px;
   }
 }

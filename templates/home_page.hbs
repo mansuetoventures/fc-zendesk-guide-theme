@@ -24,9 +24,11 @@
       <h2>FEATURED CATEGORIES</h2>
 
       <div class="categories">
-        <div class="category">1</div>
-        <div class="category">2</div>
-        <div class="category">3</div>
+        <div class="treadmill">
+          <div class="category"><div style="width: 160px; height: 95px; background: red;"></div></div>
+          <div class="category"><div style="width: 160px; height: 95px; background: red;"></div></div>
+          <div class="category"><div style="width: 160px; height: 95px; background: red;"></div></div>
+        </div>
       </div>
     </section>
 
@@ -94,6 +96,44 @@
       }
 
       categories.innerHTML += `<div class="row">${entries}</div>`;
+    }
+  }
+
+  // All the carousel code that's fit to print.
+  var touchstartX = 0;
+  var touchstartY = 0;
+  var touchendX = 0;
+  var touchendY = 0;
+
+  var carousel = document.querySelector('#homepage .featured-categories .categories .treadmill');
+
+  var carouselCount = 0;
+  var carouselMax = carousel.children.length - 1;
+  
+  var entryWidth = document.querySelector('#homepage .featured-categories .categories .treadmill .category').offsetWidth;
+ 
+  carousel.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+  }, false);
+
+  carousel.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+  }, false); 
+
+  function handleGesture() {
+    console.log(carouselCount);
+
+    if (touchstartX > touchendX && carouselCount < carouselMax) {
+      carouselCount++;
+      carousel.style.left = `${-Math.abs((carouselCount * 295) - 25)}px`;
+    }
+
+    if (touchstartX < touchendX && carouselCount > 0) {
+      carouselCount--;
+      carousel.style.left = carouselCount === 0 ? `25px` : `${-Math.abs((carouselCount * 295) - 25)}px`;
     }
   }
 </script>
