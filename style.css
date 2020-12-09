@@ -120,10 +120,16 @@ header #search button {
   background: transparent;
 }
 
-header #search button::before {
+header #search button::before, header #mobile-search::before {
   content: "\e910";
   font: normal 14px/14px FCIcon2015;
   color: #000000;
+}
+
+header #mobile-search {
+  position: relative;
+  top: 5px;
+  display: none;
 }
 
 header #search #query::placeholder { color: #B2B2B2; opacity: 1; }
@@ -235,6 +241,10 @@ nav#breadcrumbs ol li:not(:last-child)::after {
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+}
+
+#homepage section.featured-categories .scrollbar {
+  display: none;
 }
 
 /* all categories */
@@ -859,6 +869,7 @@ footer .links span:not(:first-child) {
   }
 }
 
+/* MOBILE */
 @media (max-width: 767px) {
   header#homepage-header {
     max-width: calc(100vw - 50px);
@@ -916,6 +927,23 @@ footer .links span:not(:first-child) {
     width: calc(100vw - 80px);
   }
 
+  #homepage section.featured-categories .scrollbar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #E5E5E5;
+    margin-top: 24px;
+    position: relative;
+  }
+
+  #homepage .featured-categories .scrollbar .scrollbar-thumb {
+    height: 100%;
+    background: #000000;
+    position: relative;
+    left: 0;
+    transition: left 500ms;
+  }
+
   #homepage section.all-categories .categories .row {
     grid-template-columns: 1fr;
     border-top: 0;
@@ -931,6 +959,66 @@ footer .links span:not(:first-child) {
     color: #000;
     margin: 0;
     text-decoration: none;
+  }
+
+  header {
+    z-index: 10;
+  }
+
+  header .container {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  header #logo {
+    display: flex;
+  }
+
+  header #search {
+    display: none;
+  }
+
+  header .container .content {
+    height: 66px;
+  }
+
+  header #mobile-search {
+    display: block;
+  }
+
+  header #search.show {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FFFFFF;
+    width: 100vw;
+    height: 154px;
+    z-index: 2;
+    box-shadow: #999999 0px 5px 10px;
+  }
+
+  header #search section.search-box {
+    margin-bottom: 35px;
+    width: calc(100% - 50px);
+  }
+
+  header #search .mobile-close {
+    position: absolute;
+    right: 25px;
+    top: 23px;
+  }
+
+  nav#breadcrumbs {
+    padding-left: 0;
+    padding-right: 0;
+    top: 66px;
+  }
+
+  nav#breadcrumbs div {
+    padding: 5px 25px 16px 25px;
   }
 
   body.homepage footer .container {
@@ -962,5 +1050,46 @@ footer .links span:not(:first-child) {
   footer .links span:not(:first-child), footer .links .copyright {
     margin-left: 0;
     margin-top: 11px;
+  }
+
+  .container.sidebar {
+    display: block;
+  }
+
+  .container.sidebar article {
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  #category article {
+    padding-top: 56px;
+    padding-bottom: 165px;
+  }
+
+  #category article h1 {
+    font: 900 50px/30px 'Grot';
+    letter-spacing: -0.45px;
+    color: #FF3B00;
+  }
+
+  #category article h2 {
+    font: 700 26px/19px 'Grot';
+  }
+
+  #category article .section {
+    margin-top: 75px;
+  }
+
+  #category article .section .articles ul li a {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #category article .section .articles ul li::before {
+    bottom: 1px;
+  }
+
+  #category article .section:first-of-type {
+    margin-top: 26px;
   }
 }

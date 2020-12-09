@@ -25,26 +25,19 @@
 
       <div class="categories">
         <div class="treadmill">
-          <div class="category"><div style="width: 160px; height: 95px; background: red;"></div></div>
-          <div class="category"><div style="width: 160px; height: 95px; background: red;"></div></div>
-          <div class="category"><div style="width: 160px; height: 95px; background: red;"></div></div>
+          <div class="category"><div style="width: 160px; height: 95px; background: #888888;"></div></div>
+          <div class="category"><div style="width: 160px; height: 95px; background: #888888;"></div></div>
+          <div class="category"><div style="width: 160px; height: 95px; background: #888888;"></div></div>
         </div>
+      </div>
+
+      <div class="scrollbar">
+        <div class="scrollbar-thumb"></div>
       </div>
     </section>
 
     <section class="all-categories">    
-      <div class="categories">
-        {{!-- {{#each categories}}          
-          <div class="category">
-            <h3>{{name}}</h3>
-
-            {{#each sections}}
-              {{@key}}: {{name}}<br>
-              {{@first}}: {{name}}<hr>
-            {{/each}}
-          </div>
-        {{/each}} --}}
-      </div>
+      <div class="categories"></div>
     </section>
   </div>
 </main>
@@ -111,29 +104,40 @@
   var carouselMax = carousel.children.length - 1;
   
   var entryWidth = document.querySelector('#homepage .featured-categories .categories .treadmill .category').offsetWidth;
- 
-  carousel.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-  }, false);
+  
+  var scrollbar = document.querySelector('#homepage .featured-categories .scrollbar');
+  var scrollbarThumb = document.querySelector('#homepage .featured-categories .scrollbar .scrollbar-thumb');
 
-  carousel.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-  }, false); 
+  getThumbWidth = () => {
+    scrollbarThumb.style.width = `${scrollbar.offsetWidth / (carouselMax + 1)}px`;
+  }
 
-  function handleGesture() {
-    console.log(carouselCount);
-
+  handleGesture = () => {
     if (touchstartX > touchendX && carouselCount < carouselMax) {
       carouselCount++;
       carousel.style.left = `${-Math.abs((carouselCount * 295) - 25)}px`;
+      scrollbarThumb.style.left = `${scrollbarThumb.offsetWidth * carouselCount}px`;
     }
 
     if (touchstartX < touchendX && carouselCount > 0) {
       carouselCount--;
       carousel.style.left = carouselCount === 0 ? `25px` : `${-Math.abs((carouselCount * 295) - 25)}px`;
+      scrollbarThumb.style.left = `${scrollbarThumb.offsetWidth * carouselCount}px`;
     }
   }
+
+  getThumbWidth();
+  
+  window.matchMedia('(max-width: 767px)').addListener(getThumbWidth());
+ 
+  carousel.addEventListener('touchstart', (event) => {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+  }, {passive: true});
+
+  carousel.addEventListener('touchend', (event) => {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+  }, { passive: true }); 
 </script>
