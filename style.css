@@ -120,12 +120,6 @@ header #search button {
   background: transparent;
 }
 
-header #search button::before, header #mobile-search::before {
-  content: "\e910";
-  font: normal 14px/14px FCIcon2015;
-  color: #000000;
-}
-
 header #mobile-search {
   position: relative;
   top: 5px;
@@ -199,10 +193,11 @@ nav#breadcrumbs ol {
   margin: 0;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 nav#breadcrumbs ol li, nav#breadcrumbs ol li a {
-  font: 700 10px/10px 'IBM';
+  font: 700 10px/14px 'IBM';
   letter-spacing: 2px;
   color: #999999;
   text-transform: uppercase;
@@ -473,7 +468,7 @@ nav#breadcrumbs ol li:not(:last-child)::after {
 #article article .article-content a {
   color: #474747;
   text-decoration: none;
-  border-bottom: 1px solid #474747;
+  border-bottom: 1px solid #B2B2B2;
   padding-bottom: 4px;
 }
 
@@ -1007,7 +1002,7 @@ footer .links span:not(:first-child) {
 
   header #search .mobile-close {
     position: absolute;
-    right: 25px;
+    right: 30px;
     top: 23px;
   }
 
@@ -1019,6 +1014,10 @@ footer .links span:not(:first-child) {
 
   nav#breadcrumbs div {
     padding: 5px 25px 16px 25px;
+  }
+
+  nav#breadcrumbs ol li, nav#breadcrumbs ol li a {
+    letter-spacing: 1.5px;
   }
 
   body.homepage footer .container {
@@ -1091,5 +1090,34 @@ footer .links span:not(:first-child) {
 
   #category article .section:first-of-type {
     margin-top: 26px;
+  }
+
+  #article .container.sidebar {
+    max-width: calc(100% - (28px * 2));
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #article .container.sidebar article { order: 1; }
+  #article .container.sidebar aside { order: 2; }
+
+  #article article {
+    padding-top: 44px;
+    padding-bottom: 0;
+  }
+
+  #article aside {
+    /* border-top: #E5E5E5 1px solid; */
+    /* padding-top: 30px; */
+    padding-top: 0;
+    margin-top: 109px;
+  }
+
+  #article aside .section-articles {
+    display: none;
+  }
+
+  button#contact-us {
+    right: 25px;
   }
 }

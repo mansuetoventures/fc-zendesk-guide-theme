@@ -9,17 +9,24 @@
       </div>
 
       <div id="search">
-        <div class="mobile-close">X</div>
+        <div class="mobile-close">
+          <img src="https://img-cdn.inc.com/image/upload/v1607626080/inc-hosted-images/Zendesk%20Help%20Center%20-%20Close%20Icon.svg" />
+        </div>
+        
         <section class="search-box">
           <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
             <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
             <input id="query" name="query" placeholder="Search" type="search" />
-            <button></button>
+            <button>
+              <img src="https://img-cdn.inc.com/image/upload/v1607626087/inc-hosted-images/Zendesk%20Help%20Center%20-%20Search%20Icon.svg" />
+            </button>
           </form>
         </section>
       </div>
 
-      <div id="mobile-search"></div>
+      <div id="mobile-search">
+        <img src="https://img-cdn.inc.com/image/upload/v1607626087/inc-hosted-images/Zendesk%20Help%20Center%20-%20Search%20Icon.svg" />
+      </div>
     </section>
   </div>
 </header>
@@ -32,11 +39,15 @@
     document.querySelector('header').remove();
   }
 
-  document.querySelector('header #search .mobile-close').onclick = () => {
-    search.classList.remove('show');
+  if (document.querySelector('header #search .mobile-close')) {
+    document.querySelector('header #search .mobile-close').onclick = () => {
+      search.classList.remove('show');
+    }
   }
 
-  document.querySelector('header #mobile-search').onclick = () => {
-    search.classList.add('show');
-  };
+  if (document.querySelector('header #mobile-search')) {
+    document.querySelector('header #mobile-search').onclick = () => {
+      search.classList.add('show');
+    };
+  }
 </script>
