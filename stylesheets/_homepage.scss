@@ -1,0 +1,299 @@
+main#homepage {
+  padding: 0 28px;
+
+  @include mq(mobile) {
+    padding: 0 25px;
+  }
+
+  #homepage-header {
+    @include mq(tablet) {
+      padding: 0 8px;
+    }
+
+    @include mq(mobile) {
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+    
+      #logo {
+        margin: 0 0 142px 0;
+
+        @include mq(tablet) {
+          margin: 0 0 68px 0;
+        }
+
+        @include mq(mobile) {
+          margin: 0 0 32px 0;
+        }
+
+        a {
+          display: flex;
+          align-items: baseline;
+
+          @include mq(mobile) {
+            display: block;
+          }
+
+          img {
+            height: 141px;
+
+            @include mq(tablet) {
+              height: 97px;
+            }
+
+            @include mq(mobile) {
+              height: 68px;
+            }
+          }
+
+          span {
+            @include font('Grot', 900, 100, 100, -0.89, $black, false);
+
+            position: relative;
+            bottom: 2px;
+            margin-left: 32px;
+
+            @include mq(tablet) {
+              @include font('Grot', 900, 70, 70, -0.63, $black, false);
+            }
+
+            @include mq(mobile) {
+              @include font('Grot', 900, 55, 55, -0.49, $black, false);
+
+              margin-left: 0;
+              bottom: 0;
+            }
+          }
+        }
+      }
+
+      #search {
+        margin: 0 auto;
+        max-width: 958px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq(tablet) {
+          max-width: 614px;
+          display: block;
+        }
+
+        span {
+          @include font('Grot', 900, 56, 56, -0.5, $orange, false);
+
+          @include mq(tablet) {
+            @include font('Grot', 900, 50, 50, -0.45, $orange, false);
+          }
+        }
+
+        .search-box {
+          width: 405px;
+          border-bottom: $mid-gray 1px solid;
+          position: relative;
+          top: 4px;
+
+          @include mq(tablet) {
+            width: 452px;
+            margin: 23px 0 0 0;
+            top: 0;
+          }
+
+          @include mq(mobile) {
+            width: 100%;
+            margin: 26px 0 0 0;
+          }
+
+          #query {
+            width: calc(100% - 30px);
+            background: transparent;
+            border: none;
+
+            @include font('Grot', 700, 24, 35, 0, $mid-gray, false);
+
+            &::placeholder,
+            &::-ms-input-placeholder,
+            &:-ms-input-placeholder {
+              color: $mid-gray;
+              // opacity: 1;
+            }
+          }
+
+          button {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            border: none;
+            background: transparent;
+
+            @include mq(tablet) {
+              top: 14px;
+            }
+          }
+        }
+
+        * { outline: none; }
+      }
+    }
+  }
+
+  @include content-container(true) {
+    .featured-categories {
+      border-top: $black 5px solid;
+      margin: 132px 0 52px 0;
+
+      @include mq(tablet) {
+        margin: 120px 0 52px 0;
+      }
+
+      @include mq(mobile) {
+        margin: 94px 0 102px 0;
+      }
+
+      h2 {
+        @include font('IBM', 700, 10, 10, 2, $black, true);
+        
+        padding: 10px 0 14px 0;
+
+        @include mq(mobile) {
+          padding: 10px 0 0 0;
+        }
+      }
+
+      .categories {
+        @include mq(mobile) {
+          padding: 26px 0 0 0;
+          width: 100vw;
+          position: relative;
+          right: 25px;
+          overflow: hidden;
+        }
+
+        .treadmill {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+
+          @include mq(mobile) {
+            position: relative;
+            left: 25px;
+            transition: left 500ms;
+          }
+
+          .category {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+
+            @include mq(tablet) {
+              padding: 37px 0 42px;
+            }
+
+            @include mq(mobile) {
+              padding: 0;
+              width: 60vw;
+            }
+
+            img {
+              @include mq(mobile) {
+                max-height: 124px;
+              }
+            }
+
+            &:hover {
+              border-top-color: $mid-gray;
+            }
+          }
+        }
+      }
+
+      .scrollbar {
+        display: none;
+
+        @include mq(mobile) {
+          display: block;
+          width: 100%;
+          height: 3px;
+          background: $gray;
+          margin: 24px 0 0 0;
+        }
+
+        .scrollbar-thumb {
+          height: 100%;
+          background: $black;
+          position: relative;
+          transition: left 500ms;
+        }
+      }
+    }
+
+    .all-categories {
+      .categories {
+        .row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          column-gap: 50px;
+          border-top: $gray 1px solid;
+          padding: 62px 0 52px 0;
+
+          @include mq(tablet) {
+            column-gap: 20px;
+          }
+
+          @include mq(mobile) {
+            display: block;
+            border-top: none;
+            padding: 0;
+
+            &:last-of-type {
+              border-bottom: $gray 1px solid;
+            }
+          }
+
+          .category {
+            @include mq(mobile) {
+              border-top: $gray 1px solid;
+              padding: 40px 0;  
+            }
+
+            h3 {
+              a {
+                @include font('Grot', 700, 28, 28, 0, $black, false);
+              }
+            }
+
+            ul {
+              margin: 0 0 0 36px;
+              padding: 0;
+              list-style: none;
+
+              li {
+                margin-top: 19px;
+
+                a {
+                  @include font('Tablet Gothic', 400, 18, 18, 0, $black, false);
+                }
+
+                &:before {
+                  content: '';
+                  display: inline-block;
+                  width: 9px;
+                  height: 9px;
+                  border-radius: 50%;
+                  background: $black;
+                  position: relative;
+                  bottom: 2px;
+                  margin-right: 5px;
+                  margin-left: -18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

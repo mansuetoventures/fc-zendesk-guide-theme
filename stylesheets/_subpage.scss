@@ -1,0 +1,125 @@
+main#category, main#section {
+  @include content-container(false) {
+    &.sidebar {
+      display: grid;
+      grid-template-columns: 268px 684px;
+
+      @include mq(tablet) {
+        grid-template-columns: 176px auto;
+      }
+
+      @include mq(mobile) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      aside {
+        padding: 80px 0 230px 0;
+
+        @include mq(tablet) {
+          padding: 60px 0 282px 0;
+        }
+
+        @include mq(mobile) {
+          order: 1;
+          padding: 0;
+        }
+
+        h3 {
+          @include font('IBM', 700, 10, 12, 2, $black, true);
+          
+          @include mq(tablet) {
+            max-width: 100px;
+          }
+        }
+
+        .section-articles {
+          padding: 0 22px 0 0;
+
+          @include mq(mobile) {
+            display: none;
+          }
+        }
+
+        .related-articles {
+          border-top: $gray 1px solid;
+          margin: 25px 0 0 0;
+          padding: 25px 22px 0 0;
+
+          @include mq(mobile) {
+            padding: 15px 50% 0 0;
+          }
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            @include font('Le Monde Livre', 400, 14, 20, 0, $very-dark-gray, false);
+
+            margin-top: 18px;
+
+            a {
+              @include font('Le Monde Livre', 400, 14, 20, 0, $very-dark-gray, false);
+
+              &.current {
+                color: $dark-gray;
+              }
+            }
+          }
+        }
+      }
+
+      article {
+        border-left: $gray 1px solid;
+        padding: 59px 0 254px 40px;
+
+        @include mq(tablet) {
+          padding: 56px 0 206px 26px;
+        }
+
+        @include mq(mobile) {
+          border-left: none;
+          order: 2;
+          padding: 42px 0 0 0;
+          // padding: 42px 0 168px 0;
+        }
+
+        h1 {
+          @include font('Grot', 900, 56, 56, -0.5, $orange, false);
+
+          @include mq(mobile) {
+            @include font('Grot', 900, 50, 50, -0.45, $orange, false);
+          }
+        }
+
+        ul {
+          margin: 0 0 0 36px;
+          padding: 0;
+          list-style: none;
+
+          li {
+            &:before {
+              content: '';
+              display: inline-block;
+              position: relative;
+              bottom: 2px;
+              width: 9px;
+              height: 9px;
+              background: $black;
+              border-radius: 50%;
+              margin: 30px 5px 0 -18px;
+
+            }
+
+            a {
+              @include font('Tablet Gothic', 400, 18, 22, 0, $black, false);
+            }
+          }
+        }
+      }
+    }
+  }
+}

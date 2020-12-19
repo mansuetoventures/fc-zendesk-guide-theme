@@ -1,0 +1,40 @@
+nav#breadcrumbs {
+  margin: 0 auto;
+  height: 41px;
+  padding: 9px 0 0 0;
+  border-bottom: $gray 1px solid;
+  
+  max-width: 1300px;
+
+  @include mq(mobile) {
+    height: auto;
+    padding: 0 25px 18px 25px;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      @include font('IBM', 700, 10, 13, 2, $dark-gray, true);
+
+      &:not(:last-of-type) {
+        &:after {
+          content: '>';
+          padding-left: 3px;
+          padding-right: 6px;
+        }
+      }
+
+      a {
+        @include font('IBM', 700, 10, 13, 1.5, $dark-gray, true);
+      }
+    }
+  }
+
+}

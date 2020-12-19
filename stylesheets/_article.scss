@@ -1,0 +1,115 @@
+main#article {
+  @include content-container(false) {
+    &.sidebar {
+      display: grid;
+      grid-template-columns: 268px 684px;
+
+      @include mq(tablet) {
+        grid-template-columns: 176px auto;
+      }
+
+      @include mq(mobile) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      aside {
+        padding: 80px 0 230px 0;
+
+        @include mq(tablet) {
+          padding: 60px 0 282px 0;
+        }
+
+        @include mq(mobile) {
+          order: 2;
+          padding: 0;
+        }
+
+        h3 {
+          @include font('IBM', 700, 10, 12, 2, $black, true);
+          
+          @include mq(tablet) {
+            max-width: 100px;
+          }
+        }
+
+        .section-articles {
+          padding: 0 22px 0 0;
+
+          @include mq(mobile) {
+            display: none;
+          }
+        }
+
+        .related-articles {
+          border-top: $gray 1px solid;
+          margin: 25px 0 0 0;
+          padding: 25px 22px 0 0;
+
+          @include mq(mobile) {
+            padding: 15px 50% 0 0;
+          }
+        }
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            @include font('Le Monde Livre', 400, 14, 20, 0, $very-dark-gray, false);
+
+            margin-top: 18px;
+
+            a {
+              @include font('Le Monde Livre', 400, 14, 20, 0, $very-dark-gray, false);
+
+              &.current {
+                color: $dark-gray;
+              }
+            }
+          }
+        }
+      }
+
+      article {
+        border-left: $gray 1px solid;
+        padding: 68px 0 0 40px;
+
+        @include mq(tablet) {
+          padding: 52px 0 0 26px;
+        }
+
+        @include mq(mobile) {
+          border-left: none;
+          order: 1;
+          padding: 44px 0 142px 0;
+        }
+
+        h1 {
+          @include font('Grot', 700, 28, 35, 0, $black, false);
+
+          @include mq(mobile) {
+            @include font('Grot', 700, 27, 32, .68, $black, false);
+          }
+        }
+
+        .article-content {
+          p, li {
+            @include font('Le Monde Livre', 400, 16, 30, 0, $very-dark-gray);
+
+            &:not(:first-of-type) {
+              margin-top: 2em;
+            }
+
+            a {
+              color: $very-dark-gray;
+              border-bottom: $dark-gray 1px solid;
+              padding: 0 0 6px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

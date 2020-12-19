@@ -1,0 +1,167 @@
+footer {
+  width: 100vw;
+
+  @include mq(mobile) {
+    margin: 0 0 0 0;
+  }
+
+  .container {
+    padding: 0 28px;
+    
+    &.outer {
+      max-width: 1300px;
+      margin: 0 auto;
+
+      @at-root body.home & {
+        max-width: 958px;
+      }
+
+      @include mq(mobile) {
+        padding: 0 25px;
+      }
+    }
+
+    &.inner {
+      border-top: $gray 1px solid;
+
+      padding: 48px 0 44px 0;
+
+      @include mq(tablet) {
+        padding: 122px 0 58px 0; 
+      }
+
+      @include mq(mobile) {
+        @at-root body.home & {
+          padding: 166px 0 50px 0;
+          border-top: none;
+        }
+      }
+    }
+  }
+
+
+  #columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    margin: 0 auto;
+
+    max-width: 894px;
+
+    @include mq(tablet) {
+      max-width: 635px;
+    }
+
+    @include mq(mobile) {
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 0;
+    }
+
+    .column {
+      @include mq(mobile) {
+        padding: 0 50% 0 0;
+
+        &:not(:first-of-type) {
+          margin-top: 42px;
+        }
+      }
+
+      h3 {
+        display: none;
+      }
+
+      h4 {
+        @include font('IBM', 700, 10, 12, 2, $black, true);
+        
+        @include mq(tablet) {
+          @include font('IBM', 700, 11, 11, 1.1, $black, true);
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          margin: 15px 0 0 0;
+
+          a {
+            @include font('Le Monde Livre', 400, 14, 14, 0, $very-dark-gray);
+
+            @include mq(tablet) {
+              @include font('Le Monde Livre', 400, 12, 12, 0.24, $very-dark-gray);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #links {
+    width: 100vw;
+    height: 80px;
+    background: $black;
+
+    @include mq(tablet) {
+      height: 52px;
+    }
+
+    @include mq(mobile) {
+      height: 162px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+
+      @include mq(tablet) {
+        max-width: 100%;
+        padding: 0 18px;
+      }
+
+      @include mq(mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 25px;
+      }
+      
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        @include mq(mobile) {
+          display: block;
+        }
+
+        li {
+          &:not(:first-of-type) {
+            margin: 0 0 0 22px;
+
+            @include mq(mobile) {
+              margin: 8px 0 0 0;
+            }
+          }
+
+          a {
+            @include font('IBM', 700, 10, 12, 2, $white, true);
+          }
+        }
+      }
+
+      .copyright {
+        @include font('IBM', 700, 10, 12, 2, $mid-gray, true);
+
+        @include mq(mobile) {
+          margin: 12px 0 0 0;
+        }
+      }
+    }
+
+  }
+}

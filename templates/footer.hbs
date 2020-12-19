@@ -1,74 +1,42 @@
 <footer>
-  <div class="container">
-    <section class="columns">
-      <div class="column faqs">
-        <h4>FAQ</h4>
-      </div>
+  <div class="container outer">
+    <div class="container inner">
+      <section id="columns">
+        <div class="column faqs">
+          <h4>FAQ</h4>
+        </div>
 
-      <div class="column recent">
-        <h4>RECENT ARTICLES</h4>
-        {{recent_articles}}
-      </div>
+        <div class="column recent">
+          <h4>RECENT ARTICLES</h4>
+          {{recent_articles}}
+        </div>
 
-      <div class="column popular">
-        <h4>POPULAR ARTICLES</h4>
-      </div>
-    </section>
+        <div class="column popular">
+          <h4>POPULAR ARTICLES</h4>
+        </div>
+      </section>
+    </div>
   </div>
 
-  <section class="links">
-    <div>
-      <span>
-        <a href="https://www.inc.com/">Home</a>
-      </span>
-      
-      <span>
-        <a href="http://www.inc.com/customercare">Subscriber Care</a>
-      </span>
-      
-      <span>
-        <a href="http://www.mansueto.com/privacy.html">Privacy Policy</a>
-      </span>
-    </div>
+  <section id="links">
+    <div class="container outer">
+      <ul>
+        <li>
+          <a href="https://www.inc.com/">Home</a>
+        </li>
+        
+        <li>
+          <a href="http://www.inc.com/customercare">Subscriber Care</a>
+        </li>
+        
+        <li>
+          <a href="http://www.mansueto.com/privacy.html">Privacy Policy</a>
+        </li>
+      </ul>
 
-    <div class="copyright">
-      Copyright 2020 Mansueto Ventures
+      <div class="copyright">
+        Copyright 2020 Mansueto Ventures
+      </div>
     </div>
   </section>
 </footer>
-
-<script>
-  var button = document.querySelector('button#contact-us');
-  
-  let last_known_scroll_position = 0;
-  let ticking = false;
-
-  function doSomething(scroll_pos) {
-    var doc = document.body.offsetHeight;
-    var loc = scroll_pos + window.innerHeight;
-
-    if (loc > (doc - 100)) {
-      button.style.opacity = 0; 
-      
-      setTimeout(function () {
-        button.style.right = '-200px';
-      }, 250); 
-    } else { 
-      button.style.removeProperty('right');
-      button.style.opacity = 1;
-    }
-  }
-
-  document.addEventListener('scroll', function (e) {
-    last_known_scroll_position = window.scrollY;
-
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        doSomething(last_known_scroll_position);
-        ticking = false;
-      });
-
-      ticking = true;
-    }
-  });
-</script>

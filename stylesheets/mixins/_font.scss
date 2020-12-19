@@ -1,0 +1,6 @@
+@mixin font($f, $w, $s, $h, $l: 0, $c: $black, $u: false) {
+  font: #{$w} #{$s}px/#{$h}px $f;
+  letter-spacing: #{$l}px;
+  color: #{$c};
+  @if $u {text-transform: uppercase;}
+}

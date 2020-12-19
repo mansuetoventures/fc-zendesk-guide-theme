@@ -1,0 +1,121 @@
+main#search-results, main#error {
+  @include content-container(false) {
+    &.sidebar {
+      display: grid;
+      grid-template-columns: 268px auto;
+
+      @include mq(tablet) {
+        display: block;
+      }
+
+      aside {
+        @include mq(tablet) {
+          display: none;
+        }
+      }
+
+      article {
+        padding: 59px 0 254px 40px;
+        border-left: $gray 1px solid;
+
+        @include mq(mobile) {
+          border-left: none;
+          padding: 42px 0 168px 0;
+        }
+
+        h1 {
+          @include font('Grot', 900, 56, 56, -0.5, $orange, false);
+          margin: 29px 0 0 0;
+
+          @include mq(tablet) {
+            @include font('Grot', 900, 50, 50, -0.45, $orange, false);
+          }
+        }
+
+        h2 {
+          @include font('IBM', 700, 12, 12, 1.5, $dark-gray, true);
+        }
+
+        p {
+          @include font('Tablet Gothic', 400, 18, 22, 0, $black, false);
+        }
+
+        a {
+          @include font('Tablet Gothic', 400, 18, 22, 0, $orange, false);
+        }
+
+        .results {
+          border-top: $gray 1.25px solid;
+          padding: 26px 0 30px;
+          margin-top: 26px;
+
+          h3 {
+            @include font('Grot', 700, 28, 28, 0, $black, false);
+          }
+
+          ul {
+            margin: 0 0 0 36px;
+            padding: 0;
+            list-style: none;
+
+            li {
+              &:before {
+                content: '';
+                display: inline-block;
+                position: relative;
+                bottom: 2px;
+                width: 9px;
+                height: 9px;
+                background: $black;
+                border-radius: 50%;
+                margin: 30px 5px 0 -18px;
+
+              }
+
+              a {
+                @include font('Tablet Gothic', 400, 18, 22, 0, $black, false);
+              }
+            }
+          }
+        }
+
+        nav.pagination {
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+
+            li {
+              @include font('Grot', 700, 50, 50, 0, $black, true);
+
+              @include mq(mobile) {
+                @include font('Grot', 700, 30, 30, 0, $black, true);
+              }
+
+              &:not(:first-of-type) {
+                margin-left: 0.75em;
+              }
+
+              a {
+                @include font('Grot', 700, 50, 50, 0, $black, true);
+
+                @include mq(mobile) {
+                  @include font('Grot', 700, 30, 30, 0, $black, true);
+                }
+              }
+
+              span {
+                @include font('Grot', 700, 50, 50, 0, $orange, true);
+
+                @include mq(mobile) {
+                  @include font('Grot', 700, 30, 30, 0, $black, true);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

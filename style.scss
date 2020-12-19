@@ -1,0 +1,37 @@
+// CORE STYLES
+* {
+  box-sizing: border-box; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-font-smoothing: grayscale; 
+  // transition: all 500ms;
+}
+
+img {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+// VARIABLES
+@import './stylesheets/vars/fonts';
+@import './stylesheets/vars/colors';
+
+// MIXINS
+@import './stylesheets/mixins/font';
+@import './stylesheets/mixins/media';
+@import './stylesheets/mixins/container';
+
+// TEMPLATES
+@import './stylesheets/header';
+@import './stylesheets/footer';
+@import './stylesheets/homepage';
+@import './stylesheets/subpage';
+@import './stylesheets/article';
+@import './stylesheets/search-error';
+@import './stylesheets/contact-us';

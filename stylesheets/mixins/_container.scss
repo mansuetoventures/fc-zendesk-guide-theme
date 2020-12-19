@@ -1,0 +1,31 @@
+@mixin content-container($homepage: false) {
+  @if $homepage {
+  //   padding: 88px 28px 0;
+
+  //   @include mq(mobile) {
+  //     padding: 35px 15px 0;
+  //   }
+  }
+
+  @else {
+    padding: 0 28px;
+
+    @include mq(mobile) {
+      padding: 0 25px;
+    }
+  }
+  
+  .container {
+    margin: 0 auto;
+
+    @if $homepage {
+      max-width: 958px;
+    }
+    
+    @else {
+      max-width: 1300px;
+    } 
+
+    @content;
+  }
+}

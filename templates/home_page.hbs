@@ -1,25 +1,27 @@
 <main id="homepage">
-  <header id="homepage-header">
-    <div id="logo">
-      {{#link 'help_center'}}
-        <img src="//inc2.inc.com/img/Inc-logo-black.svg">
-        <span>Help Center</span>
-      {{/link}}
-    </div>
+  <section id="homepage-header">
+    <div class="container">
+      <div id="logo">
+        {{#link 'help_center'}}
+          <img src="//inc2.inc.com/img/Inc-logo-black.svg">
+          <span>Help Center</span>
+        {{/link}}
+      </div>
 
-    <div id="search">
-      <span>How can we help you?</span>
-      <section class="search-box">
-        <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
-          <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-          <input id="query" name="query" placeholder="Search" type="search" />
-          <button>
-            <img src="https://img-cdn.inc.com/image/upload/v1607626087/inc-hosted-images/Zendesk%20Help%20Center%20-%20Search%20Icon.svg" />
-          </button>
-        </form>
-      </section>
+      <div id="search">
+        <span>How can we help you?</span>
+        <section class="search-box">
+          <form accept-charset="UTF-8" action="/hc/en-us/search" class="search" method="get" role="search">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+            <input id="query" name="query" placeholder="Search" type="search" />
+            <button>
+              <img src="https://img-cdn.inc.com/image/upload/v1607626087/inc-hosted-images/Zendesk%20Help%20Center%20-%20Search%20Icon.svg" />
+            </button>
+          </form>
+        </section>
+      </div>
     </div>
-  </header>
+  </section>
 
   <div class="container">
     <section class="featured-categories">
@@ -39,7 +41,68 @@
     </section>
 
     <section class="all-categories">    
-      <div class="categories"></div>
+      <div class="categories">
+        <div id="loading">Loading...</div>
+        <script>
+          $(function() {
+            var categories = [
+              {{#each categories}}
+                {
+                  name: '{{name}}',
+                  url: '{{url}}',
+                  sections: [
+                    {{#each sections}}
+                      {
+                        name: '{{name}}',
+                        url: '{{url}}'
+                      }
+
+                      {{#unless @last}},{{/unless}}
+                    {{/each}}
+                  ]
+                }
+                
+                {{#unless @last}},{{/unless}}
+              {{/each}}
+            ];
+
+            for (i = 0; i < categories.length; i++) {
+              if ((i % 3) === 0) {
+                var entries = '';
+
+                for (j = i; j < i + 3; j++) {
+                  if (categories[j].sections) {
+                    var sections = '';
+                    var length = categories[j].sections.length < 3 ? categories[j].sections.length : 3;
+
+                    for (k = 0; k < length; k++) {
+                      sections += `
+                        <li>
+                          <a href="${categories[j].sections[k].url}">${categories[j].sections[k].name}</a>
+                        </li>
+                      `;
+                    }
+                  }
+
+                  entries += `
+                    <div class="category">
+                      <h3>
+                        <a href="${categories[j].url}">${categories[j].name}</a>
+                      </h3>
+
+                      <ul>${sections}</ul>
+                    </div>
+                  `;
+                }
+
+                $('section.all-categories .categories').append(`<div class="row">${entries}</div>`);
+              }
+            }
+
+            $('#loading').remove();
+          });
+        </script>
+      </div>
     </section>
   </div>
 </main>
@@ -48,98 +111,3 @@
   Contact Us
   <a href="mailto:care@fastcompany.com"></a>
 </button>
-
-<script>
-  document.body.classList.add('homepage'); // Let the footer know it's the homepage
-
-  var categories = document.querySelector('.all-categories .categories');
-
-  var cats = [
-    {{ #each categories }}
-      { name: '{{name}}', url: '{{url}}', sections: [ {{#each sections}} {name: '{{name}}', url: '{{url}}'} {{ #unless @last }},{{ /unless }} {{/each}} ] }
-      {{ #unless @last }},{{ /unless }}
-    {{ /each }}
-  ];
-
-  for (i = 0; i < cats.length; i++) {
-    if ((i % 3) === 0) {
-      var entries = '';
-
-      for (j = i; j < i + 3; j++) {
-        if (cats[j].sections) {
-          var sections = '';
-          var length = cats[j].sections.length < 3 ? cats[j].sections.length : 3;
-
-          for (k = 0; k < length; k++) {
-            sections += `
-              <li>
-                <a href="${cats[j].sections[k].url}">${cats[j].sections[k].name}</a>
-              </li>
-            `;
-          }
-        }
-
-        entries += `
-          <div class="category">
-            <h3>
-              <a href="${cats[j].url}">${cats[j].name}</a>
-            </h3>
-
-            <ul>${sections}</ul>
-          </div>
-        `;
-      }
-
-      categories.innerHTML += `<div class="row">${entries}</div>`;
-    }
-  }
-
-  // All the carousel code that's fit to print.
-  var touchstartX = 0;
-  var touchstartY = 0;
-  var touchendX = 0;
-  var touchendY = 0;
-
-  var carousel = document.querySelector('#homepage .featured-categories .categories .treadmill');
-
-  var carouselCount = 0;
-  var carouselMax = carousel.children.length - 1;
-  
-  var entryWidth = document.querySelector('#homepage .featured-categories .categories .treadmill .category').offsetWidth;
-  
-  var scrollbar = document.querySelector('#homepage .featured-categories .scrollbar');
-  var scrollbarThumb = document.querySelector('#homepage .featured-categories .scrollbar .scrollbar-thumb');
-
-  getThumbWidth = () => {
-    scrollbarThumb.style.width = `${scrollbar.offsetWidth / (carouselMax + 1)}px`;
-  }
-
-  handleGesture = () => {
-    if (touchstartX > touchendX && carouselCount < carouselMax) {
-      carouselCount++;
-      carousel.style.left = `${-Math.abs((carouselCount * 295) - 25)}px`;
-      scrollbarThumb.style.left = `${scrollbarThumb.offsetWidth * carouselCount}px`;
-    }
-
-    if (touchstartX < touchendX && carouselCount > 0) {
-      carouselCount--;
-      carousel.style.left = carouselCount === 0 ? `25px` : `${-Math.abs((carouselCount * 295) - 25)}px`;
-      scrollbarThumb.style.left = `${scrollbarThumb.offsetWidth * carouselCount}px`;
-    }
-  }
-
-  getThumbWidth();
-  
-  window.matchMedia('(max-width: 767px)').addListener(getThumbWidth());
- 
-  carousel.addEventListener('touchstart', (event) => {
-    touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-  }, {passive: true});
-
-  carousel.addEventListener('touchend', (event) => {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-  }, { passive: true }); 
-</script>

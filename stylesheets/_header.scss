@@ -1,0 +1,141 @@
+header {
+  width: 100vw;
+  height: 198px;
+  background: $white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 0 28px;
+
+  @at-root body.error & {
+    height: auto;
+  }
+
+  @include mq(mobile) {
+    height: auto;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 157px;
+    margin: 0 auto;
+    max-width: 1300px;
+
+    @at-root body.error & {
+      border-bottom: $gray 1px solid;
+    }
+
+    @include mq(mobile) {
+      height: auto;
+      padding: 18px 25px 17px 25px;
+    }
+
+    #logo {
+      a {
+        color: $black;
+        display: flex;
+        align-items: baseline;
+        
+        img {
+          height: 29px;
+        }
+  
+        span {
+          @include font('Grot', 700, 32, 32, 0, $black, false);
+          
+          margin-left: 17px;
+
+          @include mq(mobile) {
+            @include font('Grot', 700, 25, 25, 0, $black, false);
+
+            position: relative;
+            bottom: 1px;
+          }
+        }
+      }
+    }
+
+    #search {
+      display: flex;
+      position: relative;
+      right: 38px;
+
+      @include mq(mobile) {
+        display: none;
+
+        &.show {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: $white;
+          width: 100vw;
+          height: 154px;
+          box-shadow: $gray 0 5px 10px;
+          padding: 34px 25px;
+
+          .search-box {
+            width: 100%;
+          }
+        }
+      }
+
+      .mobile-close {
+        display: none;
+
+        @include mq(mobile) {
+          display: block;
+          position: absolute;
+          top: 25px;
+          right: 30px;
+        }
+      }
+
+      .search-box {
+        width: 258px;
+        border-bottom: $mid-gray 1px solid;
+        position: relative;
+
+        #query {
+          width: calc(100% - 13px);
+          background: transparent;
+          border: none;
+          font: 700 24px/35px 'Grot';
+          color: $mid-gray;
+
+          &::placeholder,
+          &::-ms-input-placeholder,
+          &:-ms-input-placeholder {
+            color: $mid-gray;
+            // opacity: 1;
+          }
+        }
+
+        button {
+          position: absolute;
+          top: 10px;
+          right: 0;
+          border: none;
+          background: transparent;
+        }
+      }
+
+      * { outline: none; }
+    }
+
+    #mobile-search {
+      display: none;
+
+      @include mq(mobile) {
+        display: block;
+      }
+    }
+  }
+
+  @import './breadcrumbs';
+}
