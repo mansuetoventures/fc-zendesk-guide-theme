@@ -17,6 +17,7 @@
   
   .container {
     margin: 0 auto;
+    position: relative;
 
     @if $homepage {
       max-width: 958px;

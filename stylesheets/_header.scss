@@ -1,6 +1,6 @@
 header {
   width: 100vw;
-  height: 198px;
+  height: auto;
   background: $white;
   position: sticky;
   top: 0;
@@ -29,7 +29,7 @@ header {
     }
 
     @include mq(mobile) {
-      height: auto;
+      height: 69px;
       padding: 18px 25px 17px 25px;
     }
 

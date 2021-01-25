@@ -1,28 +1,9 @@
 <footer>
-  <div class="container outer">
-    <div class="container inner">
-      <section id="columns">
-        <div class="column faqs">
-          <h4>FAQ</h4>
-        </div>
-
-        <div class="column recent">
-          <h4>RECENT ARTICLES</h4>
-          {{recent_articles}}
-        </div>
-
-        <div class="column popular">
-          <h4>POPULAR ARTICLES</h4>
-        </div>
-      </section>
-    </div>
-  </div>
-
   <section id="links">
     <div class="container outer">
       <ul>
         <li>
-          <a href="https://www.inc.com/">Home</a>
+          {{#link 'help_center'}}Home{{/link}}
         </li>
         
         <li>

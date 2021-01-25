@@ -1,6 +1,6 @@
 button#contact-us {
-  position: fixed;
-  right: 30px;
+  position: sticky;
+  left: calc(100vw - 117px - 30px);
   bottom: 40px;
   border: 0;
   background: $very-dark-gray;
@@ -11,10 +11,15 @@ button#contact-us {
   align-items: center;
   transition: opacity 250ms;
 
+
   @include font('Arial', 700, 10, 10, 2, $white, true);
 
+  @media (max-width: 1300px) {
+    left: calc(100vw - 117px - 65px);
+  }
+
   @include mq(mobile) {
-    right: 15px;
+    left: calc(100vw - 117px - 15px);
     bottom: 15px;
   }
 

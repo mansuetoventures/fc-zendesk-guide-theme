@@ -9,9 +9,6 @@
     // Remove the preview bar for dev work
     $('#preview-bar-container').remove();
 
-    // Remove any unwanted content headers
-    $('footer h3').remove();
-
     // Apply a class to the body tag so we can target specific pages
     var url = window.location.pathname;
     var page;
@@ -83,41 +80,6 @@
           $('#homepage .scrollbar-thumb').css('left', Math.abs(scrollbarThumbWidth * carouselCount));
         }
       });
-    }
-
-    // Fade in and out the contact us button near the footer
-    var button = document.querySelector('button#contact-us');
-
-    let last_known_scroll_position = 0;
-    let ticking = false;
-
-    function doSomething(scroll_pos) {
-      var doc = document.body.offsetHeight;
-      var loc = scroll_pos + window.innerHeight;
-
-      if (loc > (doc - 100)) {
-        button.style.opacity = 0;
-
-        setTimeout(function () {
-          button.style.right = '-200px';
-        }, 250);
-      } else {
-        button.style.removeProperty('right');
-        button.style.opacity = 1;
-      }
-    }
-
-    document.addEventListener('scroll', function (e) {
-      last_known_scroll_position = window.scrollY;
-
-      if (!ticking) {
-        window.requestAnimationFrame(function () {
-          doSomething(last_known_scroll_position);
-          ticking = false;
-        });
-
-        ticking = true;
-      }
-    });
+    }    
   });
 </script>

@@ -1,8 +1,11 @@
 {
-  "name": "Inc. 2021",
-  "author": "Mansueto Ventures",
+  "name": "Fast Company 2021",
+  "author": {
+    "name": "Mansueto Ventures",
+    "email": "mvdev@mansueto.com",
+    "url": "https://mansuetoventures.com/"
+  },
   "defaultLocale": "en-us",
-  "api_version": 1,
   "private": true,
   "location": {
     "support": {
@@ -10,6 +13,5 @@
     }
   },
   "version": "1.0",
-  "frameworkVersion": "2.0",
-  "settings": []
+  "frameworkVersion": "2.0"
 }

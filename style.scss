@@ -1,3 +1,8 @@
+// MIXINS
+@import './stylesheets/mixins/font';
+@import './stylesheets/mixins/media';
+@import './stylesheets/mixins/container';
+
 // CORE STYLES
 * {
   box-sizing: border-box; 
@@ -18,14 +23,21 @@ a {
   text-decoration: none;
 }
 
+article {
+	min-height: calc(100vh - (157px + 80px));
+
+	@include mq(tablet) {
+		min-height: calc(100vh - (157px + 52px));
+	}
+
+	@include mq(mobile) {
+		min-height: calc(100vh - (69px + 162px));
+	}
+}
+
 // VARIABLES
 @import './stylesheets/vars/fonts';
 @import './stylesheets/vars/colors';
-
-// MIXINS
-@import './stylesheets/mixins/font';
-@import './stylesheets/mixins/media';
-@import './stylesheets/mixins/container';
 
 // TEMPLATES
 @import './stylesheets/header';

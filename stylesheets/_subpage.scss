@@ -15,6 +15,9 @@ main#category, main#section {
 
       aside {
         padding: 80px 0 230px 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
 
         @include mq(tablet) {
           padding: 60px 0 282px 0;
@@ -23,6 +26,25 @@ main#category, main#section {
         @include mq(mobile) {
           order: 1;
           padding: 0;
+        }
+
+        img {
+          width: 117px;
+          position: relative;
+          right: 100px;
+          bottom: 53px;
+
+          @include mq(tablet) {
+            width: 86px;
+            right: 55px;
+            bottom: 23px;
+          }
+
+          @include mq(mobile) {
+            position: initial;
+            width: 77px;
+            margin-top: 32px;
+          }
         }
 
         h3 {
@@ -95,10 +117,34 @@ main#category, main#section {
           }
         }
 
+        .section {
+          &:first-of-type {
+            padding: 42px 0 0 0;
+          }
+
+          &:not(:first-of-type) {
+            padding: 102px 0 0 0;
+          }
+
+          h2 {
+            a {
+              @include font('Grot', 700, 28, 35, 0, $black, false);
+
+              @include mq(mobile) {
+                @include font('Grot', 700, 27, 32, .68, $black, false);
+              }
+            }
+          }
+        }
+
         ul {
           margin: 0 0 0 36px;
           padding: 0;
           list-style: none;
+
+          & + .section {
+            padding: 102px 0 0 0 !important;
+          }
 
           li {
             &:before {
@@ -115,7 +161,7 @@ main#category, main#section {
             }
 
             a {
-              @include font('Tablet Gothic', 400, 18, 22, 0, $black, false);
+              @include font('Tablet Gothic', 400, 18, 24, 0, $black, false);
             }
           }
         }

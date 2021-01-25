@@ -18,8 +18,11 @@ main#search-results, main#error {
         padding: 59px 0 254px 40px;
         border-left: $gray 1px solid;
 
-        @include mq(mobile) {
+        @include mq(tablet) {
           border-left: none;
+        }
+
+        @include mq(mobile) {
           padding: 42px 0 168px 0;
         }
 

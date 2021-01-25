@@ -29,9 +29,22 @@
 
       <div class="categories">
         <div class="treadmill">
-          <div class="category"><div style="width: 160px; height: 95px; background: #888888;"></div></div>
-          <div class="category"><div style="width: 160px; height: 95px; background: #888888;"></div></div>
-          <div class="category"><div style="width: 160px; height: 95px; background: #888888;"></div></div>
+          <div class="category">
+            <img src="{{asset 'inc-featured-1.svg'}}" />
+            <a href="sections/360000018103-Inc-Best-Workplaces"></a>
+          </div>
+          
+          <div class="category">
+            <img src="{{asset 'inc-featured-2.svg'}}" />
+            <a href="sections/360000019406-Inc-5000"></a>
+            <!--<a href="categories/360000007166-Inc-5000"></a>-->
+          </div>
+          
+          <div class="category">
+            <img src="{{asset 'inc-featured-3.png'}}" />
+            <a href="sections/360003514071-Inc-Masters"></a>
+            <!--<a href="categories/360000007186-Inc-Masters"></a>-->
+          </div>
         </div>
       </div>
 
@@ -42,7 +55,6 @@
 
     <section class="all-categories">    
       <div class="categories">
-        <div id="loading">Loading...</div>
         <script>
           $(function() {
             var categories = [
@@ -73,7 +85,7 @@
                 for (j = i; j < i + 3; j++) {
                   if (categories[j].sections) {
                     var sections = '';
-                    var length = categories[j].sections.length < 3 ? categories[j].sections.length : 3;
+                    var length = categories[j].sections.length < 8 ? categories[j].sections.length : 8;
 
                     for (k = 0; k < length; k++) {
                       sections += `
@@ -98,8 +110,6 @@
                 $('section.all-categories .categories').append(`<div class="row">${entries}</div>`);
               }
             }
-
-            $('#loading').remove();
           });
         </script>
       </div>
@@ -109,5 +119,5 @@
 
 <button id="contact-us">
   Contact Us
-  <a href="mailto:care@fastcompany.com"></a>
+  <a href="mailto:care@inc.com"></a>
 </button>
